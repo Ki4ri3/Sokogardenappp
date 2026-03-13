@@ -33,6 +33,10 @@ const Signup = () =>{
             formdata.append("password", password);
             formdata.append("tel", tel);
 
+            // setTimeout(() => {
+            //     setSuccess("");
+            // },1000);
+
             // By use of axios, we can access the method post
             const response =await axios.post("https://keyarie.alwaysdata.net/api/signup", formdata)
 
@@ -48,6 +52,7 @@ const Signup = () =>{
             setPassword("");
             setTel("");
         }
+
         catch(error){
             // Set the loading back to default
             setLoading("");
