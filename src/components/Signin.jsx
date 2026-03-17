@@ -34,7 +34,7 @@ const Signin = () => {
       formdata.append("password", password);
 
       // Interact with axios for the response
-      const response = await axios.post("https://kbenkamotho.alwaysdata.net/api/signin", formdata);
+      const response = await axios.post("https://keyarie.alwaysdata.net/api/signin", formdata);
 
       // Set the loading hook back to default
       setLoading("");
@@ -43,6 +43,10 @@ const Signin = () => {
       if(response.data.user){
         // If user exists -> details enteres are correct
         // setSuccess("Successfully Logged In")
+
+        // Trial: storing data in local host
+        localStorage.setItem('users', JSON.stringify(response.data.user));
+
         // If it is successful -> user to be redirected to another page
         navigate("/")
       }
